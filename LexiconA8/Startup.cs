@@ -37,6 +37,11 @@ namespace LexiconA8
                     name: "Default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
+                endpoints.MapControllerRoute(
+                    name: "FeverCheck",
+                    pattern: "FeverCheck",
+                    defaults: new {controller = "Doctor", action = "FeverCheck"}
+                    );
             });
         }
     }
