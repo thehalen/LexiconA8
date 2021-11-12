@@ -16,6 +16,15 @@ namespace LexiconA8
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc();
         }
 
@@ -31,6 +40,8 @@ namespace LexiconA8
 
             app.UseRouting();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -40,7 +51,12 @@ namespace LexiconA8
                 endpoints.MapControllerRoute(
                     name: "FeverCheck",
                     pattern: "FeverCheck",
-                    defaults: new {controller = "Doctor", action = "FeverCheck"}
+                    defaults: new { controller = "Doctor", action = "FeverCheck" }
+                    );
+                endpoints.MapControllerRoute(
+                    name: "GuessingGame",
+                    pattern: "GuessingGame",
+                    defaults: new { controller = "GuessingGame", action = "Index" }
                     );
             });
         }
