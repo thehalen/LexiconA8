@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using Microsoft.AspNetCore.Http;
 
-namespace LexiconA8.Controllers
+namespace LexiconA9.Controllers
 {
     public class GuessingGame : Controller
     {

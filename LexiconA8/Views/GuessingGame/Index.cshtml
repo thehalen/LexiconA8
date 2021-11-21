@@ -9,8 +9,8 @@
 
 <form asp-controller="GuessingGame" asp-action="Index" method="post">
     <div>
+        <label for="guess">Enter a guess:</label>
         <input type="text" name="newGuess" value="@ViewBag.Guess">
-        <label for="guess">Enter a guess</label>
     </div>
     <div>
         <input type="submit" id="submit" value="Guess!">

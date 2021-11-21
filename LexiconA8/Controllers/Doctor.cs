@@ -1,11 +1,11 @@
-﻿using LexiconA8.Models;
+﻿using LexiconA9.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LexiconA8.Controllers
+namespace LexiconA9.Controllers
 {
     public class Doctor : Controller
     {

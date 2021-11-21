@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LexiconA8
+namespace LexiconA9
 {
     public class Startup
     {
@@ -57,6 +57,11 @@ namespace LexiconA8
                     name: "GuessingGame",
                     pattern: "GuessingGame",
                     defaults: new { controller = "GuessingGame", action = "Index" }
+                    );
+                endpoints.MapControllerRoute(
+                    name: "Persons",
+                    pattern: "Persons",
+                    defaults: new { controller = "PersonController", action = "Index" }
                     );
             });
         }
